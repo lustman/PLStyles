@@ -73,5 +73,9 @@ $color-tor-consumed: #D26900;
 $color-warning: #FF6600; //#993300 
 
 $color-topic-poll: lighten($color-tor-dup, 10%);
+$color-topic-announce: $color-main;
 
-$color-p-owner: lighten($color-tor-dup, 15%)
+$color-p-owner: lighten($color-tor-dup, 15%);
+
+$color-dot-sf: $color-theme;
+$color-dot-sf-new: $color-main;

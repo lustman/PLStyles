@@ -275,11 +275,30 @@ img.menu-alt1 { display: none; }
 	color: $color-main-alt;
 }
 
+/*
+  Forum topic 
+*/
+
+.topicAuthor,
+a.topicAuthor,
+a.topicAuthor:visited {
+  color: $color-main-alt;
+}
+
+.topicPoll {
+  color: $color-topic-poll;
+}
+
+.topicAnnounce { 
+  color: $color-topic-announce;
+}
+
 .tor-not-approved {
   font-weight: bold;
   color: $color-tor-not-approved;
   
-  & + a, & + a:hover {
+  .attach & + a,
+  .attach & + a:hover {
     color: $color-tor-not-approved;
   }
 }
@@ -291,7 +310,8 @@ img.menu-alt1 { display: none; }
 .tor-approved {
   color: $color-tor-approved;
   
-  & + a, & + a:hover {
+  .attach & + a,
+  .attach & + a:hover {
     color: $color-tor-approved;
   }
 }
@@ -299,7 +319,8 @@ img.menu-alt1 { display: none; }
 .tor-consumed {
   color: $color-tor-consumed;
   
-   & + a, & + a:hover {
+   .attach & + a,
+   .attach & + a:hover {
     color: $color-tor-consumed;
   }
 }
@@ -716,9 +737,7 @@ a.p-owner:visited {
  background-color: $color-block-background-alt;
 }
 
-.topicPoll {
-  color: $color-topic-poll;
-}
+
 
 /* topic main */
 .topic .td1,
@@ -801,22 +820,7 @@ td.topicSep {
 
 */
 /* to override existing */
-/*.topic .td2 {
-	border-width: 0 1px;
-}
-.topic .td2,
-.topic .poster_btn.td3 {
-	border-bottom: 1px solid #666;
-}
-
-.topic .poster_btn.td3 {
-	border-right-width: 0;
-}
-
-.topic > tbody:last-child > tr > .td2 {
-	border-bottom: 1px solid #333;
-}
-
+/*
 #qr-editor {
 	border-top: 1px solid #333 !important;
 }*/
@@ -835,7 +839,15 @@ td.topicSep {
 
 /**/
 
-.dot-sf { color: cyan !important; font-size: 12px; margin-right: 5px; }
+/* new topics link */
+.dot-sf { 
+  color: $color-dot-sf !important;
+  
+  .new & {
+    color: $color-dot-sf-new!important;
+  }
+}
+
 .sf_title { display: block; font-size: 12px; line-height: 15px; }
 
 .attach .denied { color: cyan; }
@@ -846,7 +858,6 @@ td.topicSep {
 .warningBox1 { border: 1px solid cyan; color: $color-warning; }
 .warningBox2 { color: $color-warning !important; background: cyan; border: 2px solid #CC6600; }
 
-.topicAnnounce { color: cyan; }
 
 table.forums th { border-bottom: 1px solid #585858; }
 
