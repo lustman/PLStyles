@@ -11,8 +11,19 @@
 2. Правой кнопкой мыши по значку Stylish, затем `Управление установленными стилями`
 3. Выбираем `Создать стиль`
 4. Вводим имя на ваше усмотрение
-5. `Применить к` `URL, начинающимся с` `http://pornolab.net/`
-6. Вставляем в поле `Код` содержимое файла [`css/screen.css`](https://raw.githubusercontent.com/lustman/PLStyles/master/css/screen.css)
+5. Для Firefox
+  1. Вставляем в поле `Код`:
+    ```css
+  @namespace url(http://www.w3.org/1999/xhtml);
+
+  @-moz-document domain("pornolab.net") {
+  
+  }
+    ```
+  2. Затем внутрь фигурных скобок - содержимое файла [`css/screen.css`](https://raw.githubusercontent.com/lustman/PLStyles/master/css/screen.css)
+6. Для Opera и Chrome:
+  1. `Применить к` `URL, начинающимся с` `http://pornolab.net/`
+  2. Вставляем в поле `Код` содержимое файла [`css/screen.css`](https://raw.githubusercontent.com/lustman/PLStyles/master/css/screen.css)
 7. Нажимаем `Сохранить`
 
 ### Известные проблемы:
