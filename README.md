@@ -22,7 +22,7 @@
     ```
   2. Затем внутрь фигурных скобок - содержимое файла [`css/screen.css`](https://raw.githubusercontent.com/lustman/PLStyles/master/css/screen.css)
 6. Для Opera и Chrome:
-  1. `Применить к` `URL, начинающимся с` `http://pornolab.net/`
+  1. `Применить к` `URL в домене` `pornolab.net`
   2. Вставляем в поле `Код` содержимое файла [`css/screen.css`](https://raw.githubusercontent.com/lustman/PLStyles/master/css/screen.css)
 7. Нажимаем `Сохранить`
 
