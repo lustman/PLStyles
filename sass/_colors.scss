@@ -1,0 +1,77 @@
+/* 
+	gray
+	#E5E5E5 -> #101010
+	#c3c3c3 -> #424242
+	#FFFFFF -> #000
+	#EFEFEF -> #3E3E3E
+	#e3e3e3 -> #515151
+	#D6D6D6 -> #5D5D5D
+	#ECECEC -> #444444
+	#E7E7E7 -> #5F5F5F
+	#E9E9E6 -> #4B4B43
+	#000000 -> #ffffff
+	#cacaca -> #585858 border
+	#CCCCCC -> #545454
+	#C4C4C4 -> #373737
+	#F6F6F6 -> #212121
+	#888888 -> #E0E0E0
+	#E0E5E9 -> #404040
+	#333333 -> #D5D5D5
+	#B7C0C5 -> #333333
+	
+	blue
+	#345DA4 -> #A43535
+	
+	pink
+	#decdcd -> #553939
+	
+	orange
+	#DD6900 -> #DD0000
+	
+	green
+	#006600 -> #4C8C2C
+	993300
+	red
+	#990000 -> #D23A3A
+	
+	#CB6565
+	#D84343
+	
+	9D1A10 
+	
+	#424242
+*/
+
+$color-background-main: #101010;
+$color-main: invert($color-background-main);
+$color-main-alt: darken($color-main, 10%);
+
+$color-link: #D84343;
+$color-link-hover: lighten($color-link, 10%);
+$color-link-visited: darken($color-link, 5%);
+$color-link-active: lighten($color-link-hover, 10%);
+
+$color-theme: #9D1A10;
+
+$color-block-background: #333;
+$color-block-background-alt: lighten($color-block-background, 2%);
+$color-block-background-hover: lighten($color-block-background, 6%);
+$color-block-background-section: darken($color-block-background, 5%);
+$color-block-border: lighten($color-block-background, 10%);
+
+$color-border-grid: lighten($color-block-background, 10%);//rgba(#fff, 0.2);
+$color-border-shadow: rgba(#000, 0.25);
+
+$color-leech: #D23A3A;
+$color-seed: #569E32;//#4C8C2C;
+
+$color-tor-not-approved: #FF99CC;//#FF66CC;
+$color-tor-dup: #1F77B9;
+$color-tor-approved: $color-seed;
+$color-tor-consumed: #D26900;
+
+$color-warning: #FF6600; //#993300 
+
+$color-topic-poll: lighten($color-tor-dup, 10%);
+
+$color-p-owner: lighten($color-tor-dup, 15%)

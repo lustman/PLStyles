@@ -1,0 +1,965 @@
+@charset "UTF-8";
+
+@import "normalize";
+@import "mixins";
+@import "colors";
+@import "heights";
+@import "base-classes";
+@import "common";
+
+
+/*
+  BODY
+*/
+body,
+#body_container,
+#page_container { 
+  background: $color-background-main;
+}
+
+body {
+  color: $color-main;
+}
+
+#body_container { 
+  padding: 0;
+}
+
+/*
+  #navigation bar
+*/
+
+#main-nav {
+  height: auto !important;
+  padding: 4px 10px;
+
+  // reset value
+  border-width: 0;
+  
+  background: $color-block-background;
+  color: invert($color-block-background);
+    
+  & > table {
+    height: $input-height;
+  }
+  
+  a {
+    color: lighten(invert($color-block-background), 20%);
+
+    &:hover, &:active {
+      color: $color-link-hover;
+    }
+    
+    // add stroke to FAQ menu item
+     //&:nth-child(5)
+     &[href="viewforum.php?f=566"] {
+      @include stroke(1, darken(#f0f0f0, 10%));
+      
+      & > b {
+        letter-spacing: .25em;
+      }
+    }
+  }
+}
+
+#search-text { width: 27em !important; }
+
+/*
+    #top menu
+*/
+
+.topmenu {
+  background: $color-block-background; 
+  border-color: $color-block-border;
+}
+
+/* 
+  #pop-up menu
+*/
+
+.menu-root {
+  background-image: url('data:image/gif;base64,R0lGODlhCgAFAPABAP///wAAACH5BAUAAAEALAAAAAAKAAUAAAIKhI+BGboNGWxmFgA7');
+
+  &.menu-alt1 {
+    width: 15px;
+    height: 13px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 7px;
+    background: $color-theme no-repeat 50% 50% url('data:image/gif;base64,R0lGODlhCQAJAPABAPf39wAAACH5BAUAAAEALAAAAAAJAAkAAAINjI95wMvvHog0QdtUKgA7')
+  }
+}
+
+/* 
+  Pager
+*/
+.small > b > .menu-root,
+.nav .menu-root,
+a.pg {
+  color: $color-main;
+  background-color: $color-block-background;
+  border: solid 1px darken($color-block-background, 10%);
+  display: inline-block;
+  padding: .5em .7em;
+  
+  #pagination & {
+    border-color: darken($color-block-background, 3%);
+    background-color: darken($color-block-background, 5%);
+  }
+  
+  &:hover {
+    color: $color-main;
+    background-color: $color-theme !important;
+    text-decoration: none !important;
+  }
+}
+
+.small > b > .menu-root,
+.nav .menu-root {
+  padding-right: 20px;
+	background-repeat: no-repeat;
+	background-position: 95% 50%;
+}
+
+a.pg {
+  text-decoration: none;
+	margin-right: .1em;
+}
+
+.menu-root ~ b {
+  display: inline-block;
+  padding: .5em .7em;
+  border: solid 1px darken($color-block-background, 10%);
+  margin-right: .1em;
+  
+  #pagination & {
+    border-color: darken($color-block-background, 3%);
+  }
+}
+
+
+// hide menu button image
+img.menu-alt1 { display: none; }
+
+.menu-a {
+  background-color: $color-block-background;
+  border-color: $color-theme;
+  
+  & a {
+    color: lighten($color-theme, 10%);
+    background: none;
+    
+    &:hover {
+      background: $color-theme none no-repeat;
+      color: $color-main;
+    }
+  }
+}
+
+/*
+  #sidebar1
+*/
+
+#sidebar1 {
+  h3 {
+    border-bottom: $color-main 1px solid
+  }
+
+  h3,
+  a { 
+    color: $color-main;
+  }
+}
+
+
+/*
+  #latest_news
+*/
+
+#latest_news {
+  h3,
+  a,
+  .new a {
+    color: $color-main;
+  } 
+}
+
+.news_date {
+  color: $color-main;
+  background: $color-block-background;
+  border: 1px solid $color-block-border;
+}
+
+.news_title {
+  border-top: 1px solid $color-block-border;
+  background: none;
+  display: inline-block;
+}
+
+/*
+  #menu-sub
+*/
+.menu-sub {
+  & > table {
+    border: solid 2px $color-theme;
+    
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+    
+    & th {
+      // move to mixin ?
+      padding: 2px 0 4px 0;
+      background: $color-theme;
+      color: $color-main;
+    }
+    
+    & td {
+      padding: 4px;
+      background-color: $color-block-background;
+      // ?
+      &.cat {
+        background: $color-theme;
+      }
+    }
+  }
+
+  & label:hover {
+    background: $color-theme;
+    color: $color-main;
+  }
+  
+  & input[type="checkbox"] {
+    // move to common ?
+    margin: 0 3px 0 2px;
+  }
+}
+
+/* 
+  Sidebar 2
+*/
+
+.sb2-block {
+  background: $color-block-background;
+  @extend %border-box;
+  padding: 0;
+}
+
+#idx-sidebar2 {
+  & h3 {
+    @extend %cat-title;
+    margin: 0;
+    padding: 4px 6px 9px 9px;
+  }
+  
+  & a {
+    color: $color-link;
+  }
+  
+  & ul {
+    @extend %shadow-border;
+    margin: 0;
+    padding: 6px 6px 0 8px;
+  }
+}
+
+/* Page title */
+.maintitle,
+.pagetitle {
+  color: $color-main;
+}
+
+/*
+  #TEXT ELEMENTS
+*/
+
+#timezone {
+	color: $color-main-alt;
+}
+
+.tor-not-approved {
+  font-weight: bold;
+  color: $color-tor-not-approved;
+  
+  & + a, & + a:hover {
+    color: $color-tor-not-approved;
+  }
+}
+
+.tor-dup {
+  color: $color-tor-dup;
+}
+
+.tor-approved {
+  color: $color-tor-approved;
+  
+  & + a, & + a:hover {
+    color: $color-tor-approved;
+  }
+}
+
+.tor-consumed {
+  color: $color-tor-consumed;
+  
+   & + a, & + a:hover {
+    color: $color-tor-consumed;
+  }
+}
+
+table.usercp_register h6 {
+  color: $color-main-alt;
+}
+
+.colorAdmin, a.colorAdmin, a.colorAdmin:visited { color: cyan !important; }
+.colorMod,   a.colorMod,   a.colorMod:visited   { color: cyan !important; }
+.colorGroup, a.colorGroup, a.colorGroup:visited { color: cyan !important; }
+.colorCPH,   a.colorCPH,   a.colorCPH:visited   { color: cyan !important; }
+.adm, a.adm, a.adm:visited { color: cyan; }
+.dlWill  { color: cyan; }
+
+.dlDown,
+.leech,
+.leechmed,
+.leechsmall { 
+  color: $color-leech;
+}
+
+a.leech, a.leechmed, a.leechsmall {
+  &, &:visited, &:hover {
+    color: $color-leech;
+  }
+}
+
+.seed,
+.seedmed,
+.seedsmall,
+.dlComplete { 
+  color: $color-seed;
+}
+
+a.seed,
+a.seedmed,
+a.seedsmall {
+  &, &:visited, &:hover {
+    color: $color-seed;
+  }
+}
+
+
+.dlCancel                                { color: #666666; }
+a.dlWill,     a.dlWill:visited           { color: #0066CC; }
+a.dlDown,     a.dlDown:visited           { color: #D23A3A; }
+a.dlComplete, a.dlComplete:visited       { color: #4C8C2C; }
+a.dlCancel,   a.dlCancel:visited         { color: #666666; }
+
+// breadcrumb
+.nav em { color: $color-main; }
+
+/*
+a.topictitle:visited,
+a.torTopic:visited,
+a.tLink:visited {
+  color: $color-link-visited;
+}
+*/
+
+//.gen, .med, .genmed,
+//.small, .gensmall   { color: #ffffff; }
+
+.infobox { border-color: cyan; }
+.infobox h1 { background: cyan; }
+input.error { color: cyan; }
+
+// action link inside post
+.txtb,
+.txtb:link,
+.txtb:visited,
+.txtb:hover {
+	color: $color-main-alt;
+}
+
+table.error {
+  @extend %border-box;
+  background: $color-theme;
+    
+  & .msg {
+    border: solid 1px $color-border-shadow;
+    background: $color-theme;
+    color: $color-main;
+  }
+}
+
+
+.pm_box_size .progress { background: cyan; }
+
+.new-pm { background: cyan; border-color: #CC6600; }
+
+/* message */
+table.message {
+	width: auto;
+  
+  & td {
+    background-color: $color-block-background-section;
+  }
+}
+
+
+
+/*bold and underlined text*/
+
+/*
+    OVERRIDE USER STYLES
+*/
+
+/* Post bold and italic text */
+/*.post-b,
+.post-u,
+.post-align {
+  color: $color-main !important;
+  
+  & * {
+    color: $color-main !important;
+  }
+}*/
+
+
+.poster_info em,
+.poster_info p ,
+.posted_since {
+	color: $color-main-alt
+}
+
+/*
+  User Name
+*/
+
+.nick, .nick a {
+	color: $color-theme !important;
+}
+
+.poster_info .nick {
+  display: inline-block;
+  margin-left: -4px;
+  padding: 2px 9px 3px 5px;
+  border-radius: 0 10px 10px 0;
+  
+  .row1 & {
+    background-color: darken($color-block-background, 5%);
+  }
+  
+  .row2 & {
+    background-color: darken($color-block-background-alt, 5%);
+  }
+}
+
+
+/*
+  Tables
+*/
+
+td {
+  border-color: $color-border-grid;
+}
+
+// override
+/*.bordered th,
+.bordered td,
+table.borderless .bordered th,
+table.borderless .bordered td,*/
+.border {
+  border-color: $color-theme;
+}
+
+.bordered td {
+  border-color: $color-border-grid;
+}
+
+table.bordered,
+table.topic,
+table.forums {
+	@extend %border-box;
+}
+
+/* Cell borders */
+.forums td.row1 {
+  border-color: $color-border-grid;
+  //border-width: 0 0 1px 0;
+}
+
+/*
+.forumline td {
+  border-width: 0;
+}
+
+.topic > tbody > tr > td + td,
+.forumline > tbody > tr > td + td,
+.forums > tbody > tr > td.row1 + td.row1 {
+	border-left: 1px solid $color-border-grid;
+}
+.topic > tbody > tr + tr > td,
+.forumline > tbody > tr + tr > td,
+.forums > tbody > tr + tr > td {
+	border-top: 1px solid $color-border-grid;
+}
+*/
+/*
+.topic > tbody > tr:first-child > td,
+.forumline > tbody > tr:first-child > td,
+.forums > tbody > tr:first-child > td,
+.forumline tr:not(.tCenter) + tr.tCenter > td,
+.forumline.forum tr:nth-child(2) > td {
+	border-top: 1px solid $color-border-shadow;
+}
+
+.topic > tbody > tr > td:last-child,
+.forumline > tbody > tr > td:last-child,
+.forums > tbody > tr > td:last-child {
+	border-right: 1px solid $color-border-shadow;
+}
+
+.topic > tbody:last-child > tr:last-child > td,
+.forumline > tbody > tr:last-child > td,
+.forums > tbody > tr:last-child > td,
+.topic > tbody > tr > td.td2,
+.forumline.forum > tbody > tr:nth-last-child(2) > td {
+	border-bottom: 1px solid $color-border-shadow;
+}
+
+.topic > tbody > tr > td:first-child,
+.forumline > tbody > tr > td:first-child,
+.forums > tbody > tr > td:first-child {
+	border-left: 1px solid $color-border-shadow;
+}*/
+
+/* table cells */
+.row1, .row1 td { background: $color-block-background; /*#3E3E3E;*/ }
+.row2, .row2 td { background: $color-block-background-alt;/*#494949;*/ }
+.row3, .row3 td { background: $color-block-background-section;/*#5D5D5D;*/ }
+.row4, .row4 td { background: $color-block-background;/*#444444;*/ }
+.row5, .row5 td { background: $color-block-background; /*#333;*/ }
+.row6, .row6 td { background: green;/*#4B4B43;*/ }
+
+.forumline td.topicSep {
+  background-color: $color-block-background-section !important;
+  color: $color-main;
+}
+
+/* Forums table .forumline */
+table.forumline {
+  //border-collapse: separate;
+  background-color: $color-block-background;
+  @extend %border-box;
+}
+
+.forumline {
+  & td {
+    border-color: $color-border-grid;
+  }
+
+  & th {
+    @extend %border-box;
+    border-width: 0 0 2px 0;
+  }
+  
+  &.tablesorter > tbody > tr:nth-child(even) > td {
+    background-color: $color-block-background-alt;
+  }
+  
+  /* Search panel */
+  &.fieldsets {
+    /*& tr:nth-child(2) td {
+      border-top-color: $color-border-shadow;
+      border-bottom: 1px solid $color-border-shadow;
+    }*/
+    
+    & tr:nth-child(3) td {
+      border-width: 1px 0 0 0;
+      border-color: $color-theme;
+    }
+  }
+  
+  &.forum {
+    border-collapse: separate;
+  
+    td {
+      border-width: 0;
+    }
+    
+    & > tbody > tr > td + td {
+      border-left: 1px solid $color-border-grid;
+    }
+    
+    & > tbody > tr + tr > td {
+      border-top: 1px solid $color-border-grid;
+    }
+  }
+}
+
+
+/* Table titles */
+.thHead,
+.forumline th,
+.cat,
+td.cat,
+td.catTitle,
+td.catHead,
+td.catBottom,
+.forumline tr.tCenter + tr:not(.tCenter) td {
+  @extend %cat-title;
+  
+  & a, & a:hover {
+    color: $color-main;
+  }
+  
+  & input[type="submit"],
+  & input[type="button"],
+  & input[type="reset"]  {
+    background-color: $color-block-background;
+    
+    &:hover, &:focus {
+      background-color: lighten($color-theme, 15%);
+    }
+    
+    &:active {
+      background-color: darken($color-theme, 1%);
+    }
+  }
+}
+
+/* main page category title */
+.cat_title { 
+	@extend %cat-title;
+	border-width: 0;
+	margin: 0;
+  
+  a {
+    color: $color-main !important;
+  }
+}
+
+/*
+  Search options
+*/
+#search_opt {
+  margin-top: .5em;
+  
+  .row4 {
+    border: none;
+  }
+}
+
+/* Sort Indicators */
+.tbs-icon {
+  background-image: url('data:image/gif;base64,R0lGODlhFQAJAPABAP///wAAACH5BAUAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==');
+  
+  .headerSortUp  & {
+    background-image: url('data:image/gif;base64,R0lGODlhFQAEAPABAP///wAAACH5BAUAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7');
+  }
+  
+  .headerSortDown & {
+    background-image: url('data:image/gif;base64,R0lGODlhFQAEAPABAP///wAAACH5BAUAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7');
+  }
+}
+
+table.ratio {
+  @extend %border-box;
+    
+  & th {
+    color: $color-main !important;
+  } 
+}
+
+/* 
+  Seeding statistics
+*/
+table.dl_list  {
+	width: auto;
+	float: right;
+	margin-bottom: .5em;
+}
+
+.p-body tr {
+  background-color: $color-block-background;
+  
+  &:hover > td {
+    background-color: $color-block-background-hover !important;
+  }
+}
+
+table.peers {
+  @extend %border-box;
+
+  tr:nth-child(even) > td {
+    background-color: $color-block-background-alt;
+  }
+  
+  & th {
+    color: $color-main;
+  }
+  
+  td {
+    border-color: $color-border-grid;
+    border-top-width: 0;
+  }
+}
+
+a.p-owner,
+a.p-owner:visited {
+  color: $color-p-owner;
+}
+
+/*
+  Poll
+*/
+
+#poll {
+  clear: both;
+  @extend %border-box;
+}
+
+#poll-results-block tbody:nth-child(even) td {
+ background-color: $color-block-background-alt;
+}
+
+.topicPoll {
+  color: $color-topic-poll;
+}
+
+/* topic main */
+.topic .td1,
+.topic .td2,
+.topic .td3,
+.post_head,
+.post_btn_2 {
+  border-color: $color-border-grid;
+}
+
+/* 
+  Quote
+*/
+.q {
+	color: $color-main-alt;
+	border-color: $color-block-border;
+	border-width: 1px;
+}
+
+@mixin q-background {
+  $q-levels: 10;
+  $q-value: 2;
+  $q-step: 2;
+  $q-class: ".q";
+  $q-rule: $q-class;
+
+  @for $i from 1 through $q-levels {
+    #{$q-rule} { 
+      background-color: darken($color-block-background, $q-value);
+    }
+    
+    $q-rule: $q-rule + " " + $q-class;
+    $q-value: $q-value + $q-step;
+  }
+}
+
+@include q-background;
+
+/* 
+  Files list
+*/
+#tor-fl-wrap,
+#tor-fl-bgn,
+#tor-filelist  {
+  border-color: $color-block-border !important;
+}
+
+#tor-fl-wrap,
+#tor-fl-wrap td {
+	background-color: $color-block-background-section !important;
+}
+
+#tor-filelist {
+  background-color: $color-block-background-section !important;
+  
+  &  s {
+    color: $color-link !important;
+  } 
+}
+
+.treeview .hover {
+	color: $color-link-hover;
+}
+
+.treeview .hitarea {
+  background-image: url('data:image/gif;base64,R0lGODlhYACFAPACAICAgP///yH5BAUAAAIALAAAAABgAIUAAAL/lI+py+0PRZjB0Yiz3qjyD4aaJ5amSZ7qyrbuCsSy/NYmsOD2/unS4eMJIz5ScIhk4CgTAe6ZjCKKQKl1ejBet0dDdzucicHkstl5Tqul37X7fWrDUfNkqlqPXCzNPOjOIeeXNVhoeAgmNoNY8iXICOEIGSI52SPBhAZliVHJqeH52ZkjCqoYU5pq9aja+sLqGqsCqwoo+2BLW7fXwOtqCyoKfEtcbFx3inqMl6BbSuW1zKwljcZUAeU8CY1Wza39GXqcDF5tfo6ero4xXN3OmdnbF/u+nGtef3y/zu+UbC7O2DeAhKJ5w3Qh27iC3aQNPKignCVy/SpavCgtnzGNWsU4IvK1AGStih5vlcSIMhZFiM0IRnTZ8uA1TQ2JBSx20yYpb/9S+vwJdNBJeiSJiewwL6griUohMW06aKXDnVNfssQiM5NCgVSX5bz1VZZUqGTLmj2LNu2tAgA7');
+}
+
+
+/* specific tables */
+/*
+.topic .td1,
+.forums td {
+  border-width: 0
+}
+
+td.topicSep {
+	color: #ccc;
+}
+
+*/
+/* to override existing */
+/*.topic .td2 {
+	border-width: 0 1px;
+}
+.topic .td2,
+.topic .poster_btn.td3 {
+	border-bottom: 1px solid #666;
+}
+
+.topic .poster_btn.td3 {
+	border-right-width: 0;
+}
+
+.topic > tbody:last-child > tr > .td2 {
+	border-bottom: 1px solid #333;
+}
+
+#qr-editor {
+	border-top: 1px solid #333 !important;
+}*/
+
+/* SORT OUT BELOW */
+
+
+/*
+.highlight { color: #d97211; background: #FFFFE0; }
+*/
+/* LINKS */
+
+
+
+
+
+/**/
+
+.dot-sf { color: cyan !important; font-size: 12px; margin-right: 5px; }
+.sf_title { display: block; font-size: 12px; line-height: 15px; }
+
+.attach .denied { color: cyan; }
+
+.warnColor1  { color: $color-warning; }
+.warnColor2  { color: cyan; }
+.warnBorder1 { border: 1px solid cyan; }
+.warningBox1 { border: 1px solid cyan; color: $color-warning; }
+.warningBox2 { color: $color-warning !important; background: cyan; border: 2px solid #CC6600; }
+
+.topicAnnounce { color: cyan; }
+
+table.forums th { border-bottom: 1px solid #585858; }
+
+/**/
+
+// fix translit button
+.buttons.mrg_4 input[type="button"]:nth-last-of-type(1),
+// fix Img=R
+.mrg_4 .buttons input[type="button"]:nth-of-type(1),
+// fix backspace
+#kb_keyb input[name="dell"],
+// fix capslock
+#kb_keyb input[value="CapsLock"] {
+  width: auto !important;
+}
+
+/* Signature */
+.signature, .signature * {
+  color: $color-main-alt !important;
+}
+
+/* Images */
+var.postImg {
+	display: inline-block;
+	margin: 1em;
+}
+
+img.postImg {
+	margin: 0;
+	display: block;
+}
+
+/* Spoiler */
+.sp-wrap {
+  border-color: $color-theme;
+  background-color: $color-theme;
+}
+
+.sp-head {
+  color: $color-main;
+}
+
+.sp-body {
+	border-color: $color-theme;
+  background-color: darken($color-block-background, 5%);
+  
+  & var.postImg {
+    @extend %border-box;
+    margin: .2em .2em 0 0;
+    
+    &::hover {
+      border-color: #ddd;
+    }
+  }
+}
+
+.sp-fold {
+	color: $color-main-alt;
+}
+
+
+.thx-form input {
+  height: 3em;
+}
+
+/* Thanks list */
+.thx-list b {
+	color: $color-main-alt !important;
+}
+
+.thx-list i {
+	color: darken($color-main-alt, 5%) !important;
+}
+
+/*
+  Code block
+*/
+.c-body {
+	border-color: $color-block-border;
+  border-style: dashed;
+}
+
+.c-head, .q-head {
+	color: $color-main;
+}
+
+.c-body { 
+	color: $color-main;
+	background-color: $color-block-background-alt;
+  
+  .row2 & {
+    background-color: $color-block-background;
+  }
+}
+
+/*
+  Post Attachment
+*/
+table.attach {
+	width: auto;
+  border: 1px solid $color-block-border;
+}
+
+.dl-stub  img {
+  display: none;
+}
+
+p:nth-child(1) > .dl-stub:nth-child(1) {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: transparent no-repeat url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNWWFMmUAAAIDSURBVEhLxZYxS0JRFIAdHBwcGhz6BVHQ0NwvcGhw6Ac0+B8aMyIcGoIcHB0cJRobGhyiEIQcCiKQChwMhYT+wO188p7cd9/Rd40LXfhAzz3nfL737r3PnDEmk62TXF4oCw2hL0wFE8FnYsyRk9d6uKjBGGlSFGqCLcqCXGqKWs8YNQhSWBFGgtbcB2orWm9IBSSZ28pt05r9BXqlbn/iCwlCJyoICT0Tclcc8kpdGrbLlvJMtYKQHCbEEmD1Zi6k45sjc9WtqTCn1TiMhQ1bzPLXEhP03ruSrg/mtBqFmqTn4gXltU8DiXHlEXPaaAkpAonhALH3Sg4obiDmnNUmUwQU9xF7n8MBxVPE2oRKQPF8K6kTUG5sJ/bq6Psj0qQHc3YutVrPmMxb3Xq8jFr7j+unltrLYoZ44ARTtHscs37j9qVjdk7zah+LAeKmE0xBIxpmjYfhnY8Umoi9Xg5Z8v7nvdk7L6q1ChXEBWFmBZeye1aYC9zx9vW8jhRXIX5J1K2JlSCw5cPJq9m/2FRzl1CXssXbqSR4XTUgRzj5Ga8rxVFaiCN51UrIBGHWXlWoxr6FOJK3ncSQtG2XK/6fP3tAghDyyum1+u+tjSTzzL0XnAK1i2fqogZjpJDVzlZb5weQS8189S5DDbpIEw4ZTjiOV852+4fwmRhz5BS0HklM7hdgqG/hz7RhdgAAAABJRU5ErkJggg==');
+}

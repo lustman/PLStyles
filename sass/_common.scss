@@ -1,0 +1,131 @@
+/*
+  #LINKS
+*/
+:link {
+  color: $color-link;
+}
+
+:visited,
+a.topictitle:visited,
+a.torTopic:visited,
+a.tLink:visited,
+a.postLink:visited {
+  color: $color-link-visited;
+}
+
+:link:focus,
+:visited:focus,
+:link:hover,
+:visited:hover { 
+  color: $color-link-hover;
+}
+ 
+:link:active,
+:visited:active {
+  color: $color-link-active;
+}
+
+
+/*
+  #OTHER LINKS
+*/
+
+a.gen,
+a.med,
+a.genmed,
+a.small,
+a.gensmall { color: $color-link; }
+
+/*
+  #INPUTS
+*/
+/* all inputs */
+input[type="submit"],
+input[type="button"],
+input[type="text"],
+input[type="reset"],
+input[type="password"],
+select {
+  box-sizing: border-box;
+  height: $input-height;
+  
+  border: 1px solid $color-theme;
+  border-radius: 1px;
+  
+  vertical-align: middle;
+}
+
+/* all inputs with text */
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  color: #000;
+  padding: 2px;
+}
+
+input[type="text"].hint,
+input[type="password"].hint {
+  color: #111;
+}
+
+/* all buttons */
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  $shadow: darken($color-theme, 10%);
+
+  box-shadow: 1px 1px 1px $shadow inset, 
+              -1px -1px 1px $shadow inset;
+
+  background-color: $color-theme;
+  color: #fff;
+  
+  &:hover, &:focus {
+    background-color: lighten($color-theme, 15%);
+  }
+  
+  &:active {
+    background-color: darken($color-theme, 1%);
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: middle;
+}
+
+// restore multiple select height
+select[multiple] {
+  height: auto;
+}
+
+optgroup { 
+  color: $color-theme;
+  background-color: #E7DEDE;
+}
+
+fieldset {
+  border-color: $color-border-grid;
+}
+
+/*
+  #TEXT ELEMENTS
+*/
+
+.gen,
+.med,
+.genmed,
+.small,
+.gensmall { 
+  color: $color-main;
+}
+
+legend {
+  color: $color-main;
+  padding: 2px 2px 0 2px;
+}
+
+table  {
+	border-collapse: separate;
+}

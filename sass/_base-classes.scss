@@ -1,0 +1,13 @@
+%border-box {
+  border: 2px solid $color-theme !important;
+}
+
+%cat-title {
+  background: $color-theme none no-repeat !important;
+	color: $color-main;
+  border: none !important;
+}
+
+%shadow-border {
+  border: 1px solid $color-border-shadow;
+}
